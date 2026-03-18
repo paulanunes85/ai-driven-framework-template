@@ -1,0 +1,57 @@
+# === OS ===
+**/.DS_Store
+Thumbs.db
+
+# === IDE ===
+.vscode/.ropeproject
+.idea/
+
+# === Python ===
+.venv/
+__pycache__/
+*.pyc
+
+# === Claude Code ===
+.claude/worktrees/
+
+# === AI Platform Symlinks ===
+.adal/
+.agent/
+.augment/
+.continue/
+.cortex/
+.goose/
+.kiro/
+.roo/
+.windsurf/
+.mypy_cache/
+
+# === Generated Output ===
+output/**/*.docx
+output/**/*.pptx
+output/**/*.xlsx
+output/**/*.pdf
+output/**/*.html
+!output/**/.gitkeep
+
+# Whitelist: MD (canonical editorial source)
+!output/md/
+!output/md/**/
+!output/md/**/*.md
+
+# === Large Binaries ===
+sources/decks/**/*.pptx
+sources/decks/**/*.PPTX
+sources/pdfs/**/*.pdf
+sources/docs/**/*.docx
+sources/images/**/*.jpg
+sources/images/**/*.png
+!sources/README.md
+!sources/.gitkeep
+
+# === Archive binaries ===
+archive/pptx/**/*.pptx
+archive/pptx/**/*.PPTX
+
+# === Config secrets ===
+config/.env
