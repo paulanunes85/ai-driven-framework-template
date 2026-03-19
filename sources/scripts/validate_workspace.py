@@ -237,6 +237,8 @@ def check_archive_duplicates() -> CheckResult:
         active_names.add(path.name)
 
     for path in kb_archive_files():
+        if path.name == "README.md":
+            continue
         if path.name in active_names:
             details.append(
                 f"  Duplicate in active KB: {path.name} (exists in both archive and active)"

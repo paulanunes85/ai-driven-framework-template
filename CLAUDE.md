@@ -46,8 +46,15 @@ lang: "en"
 | `/validate` | Runs workspace validation checks | After any structural changes |
 | `/review` | Reviews a document for quality and compliance | Before finalizing deliverables |
 
+## Visual and Editorial Standards
+
+8. **SVG over Mermaid**: Prefer SVG for all diagrams. SVG provides better rendering, color control, and portability. Mermaid is acceptable as a fallback for quick drafts.
+9. **Microsoft logo color palette**: All visual elements (diagrams, SVGs, styled elements) must use the Microsoft 4-color palette — Red `#F25022`, Green `#7FBA00`, Blue `#0078D4`, Yellow `#FFB900` — with white (`#FFFFFF`) fill and black (`#000000`) text. No dark backgrounds, no gradient fills, no colored text.
+10. **Explanatory context**: Every table, diagram, and code block must have a preceding or following sentence explaining what it shows and why it matters.
+
 ## References
 
+- [WORKSPACE_MAP.md](WORKSPACE_MAP.md) — Master workspace overview (directory tree, registries, navigation)
 - [FRAMEWORK.md](FRAMEWORK.md) — 5-phase methodology (source of truth)
 - [AGENTS.md](AGENTS.md) — Agent rules and workspace structure
 - [README.md](README.md) — Full workspace documentation and document index

@@ -15,11 +15,13 @@ This is an **AI-Driven Framework** workspace. All content, templates, and delive
 2. **No binary formats** (`.docx`, `.pptx`, `.pdf`) should be generated as primary artifacts. Markdown is the source of truth; export is a secondary step.
 3. **Structured headings** (`#`, `##`, `###`) must be used to organize every document. Flat walls of text are not acceptable.
 
-## Factual Policy
+## Factual Integrity Policy (MANDATORY)
 
-- Never fabricate data, statistics, citations, or references.
-- When a fact is uncertain, state the uncertainty explicitly.
-- Prefer verifiable, sourced claims. Use `[Source: {{source}}]` notation when citing.
+1. **Never invent, assume, or presume data.** Every metric, statistic, KPI, benchmark, or market claim must come from a verifiable source.
+2. **Always include hyperlinked citations.** Format: `[Source Name](https://url)` — inline or in a References section. No unlinked claims.
+3. **Credible sources only:** GitHub, Microsoft, Anthropic, Azure, Gartner, IDC, McKinsey, IBM, Forrester, DORA Metrics, IEEE, ACM, official vendor documentation, peer-reviewed research.
+4. **When no source exists:** Mark as `[ESTIMATE]` or `[ASSUMPTION]` with reasoning. Never present estimates as facts.
+5. **Web search required:** When citing market data, trends, or third-party statistics, perform a web search to verify accuracy and find the original source URL.
 
 ## Naming Conventions
 

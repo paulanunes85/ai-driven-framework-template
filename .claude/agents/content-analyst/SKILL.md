@@ -59,6 +59,14 @@ Analysis outputs must follow this structure:
 2. No binary formats as primary artifacts.
 3. Structured headings must organize every document.
 
+## Factual Integrity Policy (MANDATORY)
+
+1. **Never invent, assume, or presume data.** Every metric, statistic, KPI, benchmark, or market claim must come from a verifiable source.
+2. **Always include hyperlinked citations.** Format: `[Source Name](https://url)` — inline or in a References section. No unlinked claims.
+3. **Credible sources only:** GitHub, Microsoft, Anthropic, Azure, Gartner, IDC, McKinsey, IBM, Forrester, DORA Metrics, IEEE, ACM, official vendor documentation, peer-reviewed research.
+4. **When no source exists:** Mark as `[ESTIMATE]` or `[ASSUMPTION]` with reasoning. Never present estimates as facts.
+5. **Web search required:** When citing market data, trends, or third-party statistics, perform a web search to verify accuracy and find the original source URL.
+
 ## Operating Rules
 
 - Never fabricate data, statistics, or citations.

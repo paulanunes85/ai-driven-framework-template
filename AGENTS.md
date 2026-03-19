@@ -93,6 +93,12 @@ This is the **{{FRAMEWORK_NAME}}** workspace. All agents operating in this works
 10. **Explicit handoff**: When a task requires a different agent, hand off explicitly with context (what was done, what remains, relevant file paths).
 11. **Error escalation**: If an agent encounters an error or ambiguity it cannot resolve, escalate to the orchestrator rather than guessing.
 
+### Visual and Editorial Standards
+
+12. **SVG over Mermaid**: Prefer SVG for all diagrams. SVG provides better rendering, color control, and portability. Mermaid is acceptable as a fallback for quick drafts only.
+13. **Microsoft logo color palette**: All visual elements must use the Microsoft 4-color palette — Red `#F25022`, Green `#7FBA00`, Blue `#0078D4`, Yellow `#FFB900` — with white (`#FFFFFF`) fill and black (`#000000`) text. No dark backgrounds, no gradient fills, no colored text.
+14. **Explanatory context**: Every table, diagram, and code block must include a preceding or following sentence explaining what it shows and why.
+
 ---
 
 ## AI Primitives — Dual-Platform
@@ -173,6 +179,7 @@ The following workflow applies to any task executed within this workspace:
 
 ## References
 
+- [WORKSPACE_MAP.md](WORKSPACE_MAP.md) — Master workspace overview (directory tree, registries, navigation)
 - [FRAMEWORK.md](FRAMEWORK.md) — 5-phase methodology (source of truth)
 - [CLAUDE.md](CLAUDE.md) — Claude Code session brief
 - [README.md](README.md) — Full workspace documentation and document index
