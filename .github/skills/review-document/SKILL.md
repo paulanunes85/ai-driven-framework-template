@@ -1,0 +1,67 @@
+---
+name: "Review Document"
+description: |
+  Reviews an existing Markdown document for quality, structure, completeness, and adherence to conventions.
+
+  USE FOR:
+  - Reviewing a document before finalizing or publishing
+  - Checking frontmatter validity, heading hierarchy, and formatting
+  - Identifying unreplaced placeholders or missing sections
+  - Producing a structured quality assessment with findings and recommendations
+
+  DO NOT USE FOR:
+  - Creating new documents (use markdown)
+  - Performing gap analysis between states (use gap-analysis)
+  - Building presentations (use build-deck)
+  - Workspace-level validation (use make validate)
+version: "1.0.0"
+---
+
+# Review Document Skill
+
+## Overview
+
+Reviews an existing Markdown document against framework conventions and produces a structured quality assessment.
+
+## Agent
+
+Routes to: **markdown-writer**
+
+## Input
+
+- **Document**: The Markdown document to review (file path or content).
+- **Review Focus** (optional): Specific aspects to emphasize (e.g., structure, accuracy, completeness).
+
+## Instructions
+
+1. Read and parse the target document.
+2. Check against the following criteria:
+   - **Frontmatter**: Present, complete, and valid YAML.
+   - **Structure**: Proper heading hierarchy, no skipped levels.
+   - **Content Quality**: Clear, concise, actionable writing.
+   - **Completeness**: No missing sections relative to the document type.
+   - **Placeholders**: Identify any unreplaced `{{PLACEHOLDER}}` variables.
+   - **Citations**: All claims properly sourced.
+   - **Formatting**: Tables, lists, and code blocks properly formatted.
+   - **Naming**: File name follows conventions.
+3. Produce a structured review with findings and recommendations.
+
+## Output
+
+A review report in Markdown:
+
+```markdown
+## Document Review: {{document_title}}
+
+### Summary
+[Overall assessment: Pass / Pass with Comments / Needs Revision]
+
+### Findings
+
+| #  | Category     | Severity | Finding              | Recommendation         |
+| -- | ------------ | -------- | -------------------- | ---------------------- |
+| 1  | ...          | ...      | ...                  | ...                    |
+
+### Detailed Comments
+[Section-by-section feedback if needed]
+```

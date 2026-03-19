@@ -25,6 +25,9 @@ This workspace provides a **template-driven, AI-assisted framework** for buildin
 - [Slash Commands](#slash-commands)
 - [Document Map](#document-map)
 - [How to Use This Template](#how-to-use-this-template)
+  - [Getting Started](#getting-started)
+  - [Post-Fork Checklist](#post-fork-checklist)
+  - [What to Customize](#what-to-customize)
 - [References](#references)
 - [Author](#author)
 
@@ -44,6 +47,28 @@ make index
 
 # 4. Read any document (PDF, PPTX, DOCX, XLSX, MD)
 make read FILE=path/to/file
+```
+
+### Post-Fork Checklist
+
+After creating your repo from this template, run these steps in order:
+
+```bash
+# 1. Initialize — replaces {{PLACEHOLDER}} variables
+make init NAME="Your Framework Name" AUTHOR="Your Name" ORG="Your Org"
+
+# 2. Setup — install Python dependencies
+make setup
+
+# 3. Validate — confirm everything is wired correctly
+make validate
+
+# 4. Create knowledge-base themes
+mkdir -p knowledge-base/{theme1,theme2,theme3}
+touch knowledge-base/theme1/.gitkeep
+
+# 5. Start adding content
+# Use /markdown or /onboard-client slash commands
 ```
 
 ---
@@ -117,7 +142,10 @@ make read FILE=path/to/file
 |-- CHANGELOG.md                      # Version history
 |-- LICENSE                           # License file
 |-- Makefile                          # Workspace automation
+|-- .editorconfig                     # Editor formatting rules (indent, charset, EOL)
 ```
+
+> **Editor Configuration:** The `.editorconfig` file enforces consistent formatting across all editors and IDEs (VS Code, Vim, JetBrains, etc.). It sets UTF-8 encoding, LF line endings, 2-space indentation for most files, and tabs for `Makefile`. No plugin is required in most modern editors. See [editorconfig.org](https://editorconfig.org) for details.
 
 ---
 
@@ -227,44 +255,53 @@ flowchart TD
 
 ## How to Use This Template
 
-### Step 1: Create Your Repository
+### Getting Started
+
+**Option A -- GitHub UI:**
+
+1. Click the green **"Use this template"** button at the top of this repo
+2. Choose **"Create a new repository"**
+3. Name your repo and click **"Create repository"**
+4. Clone it locally
+
+**Option B -- CLI:**
 
 ```bash
-gh repo create {{YOUR_ORG}}/{{YOUR_FRAMEWORK}} --template {{TEMPLATE_REPO}} --public
-cd {{YOUR_FRAMEWORK}}
+gh repo create your-org/your-framework --template paulanunes85/ai-driven-framework-template --public --clone
+cd your-framework
 ```
 
-### Step 2: Configure Your Framework
+### Post-Fork Checklist
 
-1. Replace all `{{PLACEHOLDER}}` variables in root files with your domain-specific values.
-2. Update `FRAMEWORK.md` with your methodology phases, principles, and lifecycle.
-3. Define your knowledge base themes by creating folders under `knowledge-base/`.
-
-### Step 3: Set Up AI Primitives
-
-1. Create agent definitions in `.github/agents/` and `.claude/agents/`.
-2. Define skills in `.github/skills/` and `.claude/skills/`.
-3. Add prompts in `.github/prompts/` and `.claude/commands/`.
-4. Configure rules in `.github/instructions/` and `.claude/rules/`.
-
-### Step 4: Populate the Knowledge Base
-
-1. Add source materials to `sources/` (decks, PDFs, images, docs).
-2. Use `make read FILE=...` to extract content from source documents.
-3. Create Markdown knowledge articles in the appropriate `knowledge-base/` theme folders.
-
-### Step 5: Validate and Iterate
+After creating your repo from this template, run these steps in order:
 
 ```bash
-make validate    # Check workspace integrity
-make index       # Review knowledge base coverage
+# 1. Initialize — replaces {{PLACEHOLDER}} variables
+make init NAME="Your Framework Name" AUTHOR="Your Name" ORG="Your Org"
+
+# 2. Setup — install Python dependencies
+make setup
+
+# 3. Validate — confirm everything is wired correctly
+make validate
+
+# 4. Create knowledge-base themes
+mkdir -p knowledge-base/{theme1,theme2,theme3}
+touch knowledge-base/theme1/.gitkeep
+
+# 5. Start adding content
+# Use /markdown or /onboard-client slash commands
 ```
 
-### Step 6: Start Delivering
+### What to Customize
 
-```bash
-make new-engagement CLIENT=clientname    # Scaffold a client engagement
-```
+| File | What to change |
+|------|---------------|
+| `FRAMEWORK.md` | Define your 5-phase methodology, activities, outputs |
+| `AGENTS.md` | Add domain-specific themes to the structure tree |
+| `.github/agents/` | Add domain-specific agents (e.g., security-analyst) |
+| `.github/skills/` | Add domain knowledge skills |
+| `knowledge-base/` | Create theme folders and add content |
 
 ---
 

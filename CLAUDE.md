@@ -35,6 +35,8 @@ lang: "en"
 
 ## Key Workflows
 
+> **First-time setup:** After cloning from the template, run `make init NAME="..." AUTHOR="..." ORG="..."` to replace all `{{PLACEHOLDER}}` variables in root files. Then run `make setup` to install dependencies and `make validate` to confirm everything is wired correctly.
+
 | Command | What It Does | When to Use |
 |---------|--------------|-------------|
 | `/onboard-client` | Scaffolds a new client engagement with discovery templates | Starting a new client engagement |

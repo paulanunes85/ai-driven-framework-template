@@ -6,13 +6,19 @@ WS := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SCRIPTS := $(WS)/sources/scripts
 VENV := $(WS)/.venv/bin/python3
 
-.PHONY: help setup validate bump read index new-engagement new-framework clean
+.PHONY: help init setup validate bump read index new-engagement new-framework clean
 
 help: ## Show available commands
 	@echo "{{FRAMEWORK_NAME}} — Commands"
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
+init: ## Initialize workspace. Usage: make init NAME="My Framework" AUTHOR="Name" ORG="Company"
+ifndef NAME
+	$(error NAME is required. Usage: make init NAME="My Framework" AUTHOR="Name" ORG="Company")
+endif
+	@python3 $(SCRIPTS)/init_workspace.py --name "$(NAME)" --author "$(or $(AUTHOR),$(NAME))" --org "$(or $(ORG),)" --github-handle "$(or $(GITHUB),)" --linkedin-handle "$(or $(LINKEDIN),)"
 
 setup: ## Install Python dependencies (.venv)
 	@bash $(SCRIPTS)/setup.sh

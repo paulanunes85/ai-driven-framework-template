@@ -135,6 +135,8 @@ This is the **{{FRAMEWORK_NAME}}** workspace. All agents operating in this works
 
 ## Recommended Workflow
 
+> **First-time setup:** After creating a repo from this template, run `make init NAME="..." AUTHOR="..." ORG="..."` to replace all `{{PLACEHOLDER}}` variables. Then run `make setup` and `make validate` before starting any work.
+
 The following workflow applies to any task executed within this workspace:
 
 ### 1. Understand the Request

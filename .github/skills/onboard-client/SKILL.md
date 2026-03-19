@@ -1,0 +1,52 @@
+---
+name: "Onboard Client"
+description: |
+  Initiates a new client engagement by collecting information and instantiating framework templates.
+
+  USE FOR:
+  - Starting a new client engagement from scratch
+  - Scaffolding engagement folders and initial documents
+  - Collecting client information and populating templates
+  - Generating engagement IDs and setting up tracking documents
+
+  DO NOT USE FOR:
+  - Updating existing engagement documents (edit directly)
+  - Building deliverables for an existing client (use markdown or build-deck)
+  - Creating framework-level templates (use new-framework)
+  - Gap analysis or assessment work (use gap-analysis)
+version: "1.0.0"
+---
+
+# Onboard Client Skill
+
+## Overview
+
+Initiates a new client engagement by collecting client information and instantiating framework templates with client-specific values.
+
+## Agent
+
+Routes to: **engagement-builder**
+
+## Input
+
+- **Client Name**: The name of the client organization.
+- **Engagement Scope**: Brief description of the engagement objectives.
+- **Key Stakeholders**: Sponsor, lead, and team members.
+- **Timeline**: Desired start and end dates.
+- **Industry** (optional): Client's industry vertical.
+
+## Instructions
+
+1. Collect all required client information (prompt for missing fields).
+2. Generate a unique engagement ID following the pattern `ENG-YYYY-NNN`.
+3. Load the `CLIENT_ENGAGEMENT_TEMPLATE.md` from `templates/`.
+4. Replace all `{{PLACEHOLDER}}` variables with the collected values.
+5. Generate the instantiated engagement plan.
+6. Write the output file to `output/{{engagement_id}}/`.
+7. Produce a substitution log showing all variables replaced.
+
+## Output
+
+- A fully instantiated client engagement document in Markdown.
+- A substitution log listing each variable and its assigned value.
+- A list of any deferred variables (still containing `{{placeholders}}`).
