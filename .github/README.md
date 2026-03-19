@@ -15,7 +15,7 @@ Agents > Skills > Prompts > Instructions
 
 | Level | Directory | Purpose | Count |
 |-------|-----------|---------|-------|
-| **Agents** | `agents/` | Top-level orchestrators that route requests and coordinate work | 4 |
+| **Agents** | `agents/` | Top-level orchestrators that route requests and coordinate work | 3 |
 | **Skills** | `skills/` | Reusable capabilities that agents invoke to perform specific tasks | 10 |
 | **Prompts** | `prompts/` | User-facing slash commands that trigger agent workflows | 6 |
 | **Instructions** | `instructions/` | File-pattern-scoped rules that apply automatically to matching files | 3 |
@@ -23,8 +23,8 @@ Agents > Skills > Prompts > Instructions
 ## How It Works
 
 1. **Users** invoke a **prompt** (slash command) like `/onboard-client`
-2. The prompt routes to an **agent** (e.g., `engagement-builder`)
-3. The agent loads relevant **skills** (e.g., `engagement-template`, `framework-methodology`)
+2. The prompt routes to an **agent** (e.g., `creator`)
+3. The agent loads relevant **skills** (e.g., `markdown-writer`, `framework-methodology`)
 4. **Instructions** apply automatically based on the file being edited (via `applyTo` patterns)
 
 ## Other GitHub Config Files

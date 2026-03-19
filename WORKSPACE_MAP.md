@@ -39,9 +39,8 @@ The tree below shows ALL directories and key files in this workspace. Folders ma
 |   |-- settings.json                         # Project-level Claude settings
 |   |-- agents/                               # Claude Code agent definitions
 |   |   |-- orchestrator/SKILL.md             #   Orchestrator agent
-|   |   |-- content-analyst/SKILL.md          #   Content Analyst agent
-|   |   |-- engagement-builder/SKILL.md       #   Engagement Builder agent
-|   |   |-- markdown-writer/SKILL.md          #   Markdown Writer agent
+|   |   |-- creator/SKILL.md                  #   Creator agent (generalist content creation)
+|   |   |-- analyst/SKILL.md                  #   Analyst agent (generalist analysis)
 |   |-- skills/                               # Claude Code skill files
 |   |   |-- build-business-case/SKILL.md      #   Business case generation
 |   |   |-- build-deck/SKILL.md               #   Presentation deck generation
@@ -68,9 +67,8 @@ The tree below shows ALL directories and key files in this workspace. Folders ma
 |   |   |-- feature_request.md                #   Feature request template
 |   |-- agents/                               # GitHub Copilot agent definitions
 |   |   |-- orchestrator.agent.md             #   Orchestrator agent
-|   |   |-- content-analyst.agent.md          #   Content Analyst agent
-|   |   |-- engagement-builder.agent.md       #   Engagement Builder agent
-|   |   |-- markdown-writer.agent.md          #   Markdown Writer agent
+|   |   |-- creator.agent.md                  #   Creator agent (generalist content creation)
+|   |   |-- analyst.agent.md                  #   Analyst agent (generalist analysis)
 |   |-- instructions/                         # GitHub Copilot behavioral instructions
 |   |   |-- agent-files.instructions.md       #   Rules for agent files
 |   |   |-- editorial-style.instructions.md   #   Editorial/UX visual standards
@@ -158,9 +156,8 @@ The table below lists every Markdown file in the workspace with its purpose and 
 | `.github/ISSUE_TEMPLATE/bug_report.md` | Bug report issue template | Both |
 | `.github/ISSUE_TEMPLATE/feature_request.md` | Feature request issue template | Both |
 | `.github/agents/orchestrator.agent.md` | Orchestrator agent definition | Copilot |
-| `.github/agents/content-analyst.agent.md` | Content Analyst agent definition | Copilot |
-| `.github/agents/engagement-builder.agent.md` | Engagement Builder agent definition | Copilot |
-| `.github/agents/markdown-writer.agent.md` | Markdown Writer agent definition | Copilot |
+| `.github/agents/creator.agent.md` | Creator agent definition | Copilot |
+| `.github/agents/analyst.agent.md` | Analyst agent definition | Copilot |
 | `.github/instructions/agent-files.instructions.md` | Rules for agent file structure | Copilot |
 | `.github/instructions/editorial-style.instructions.md` | Editorial/UX visual standards and Microsoft color palette | Copilot |
 | `.github/instructions/framework-markdown.instructions.md` | Markdown formatting and frontmatter rules | Copilot |
@@ -182,9 +179,8 @@ The table below lists every Markdown file in the workspace with its purpose and 
 | `.github/skills/onboard-client/SKILL.md` | Client onboarding skill | Copilot |
 | `.github/skills/review-document/SKILL.md` | Document review skill | Copilot |
 | `.claude/agents/orchestrator/SKILL.md` | Orchestrator agent definition | Claude |
-| `.claude/agents/content-analyst/SKILL.md` | Content Analyst agent definition | Claude |
-| `.claude/agents/engagement-builder/SKILL.md` | Engagement Builder agent definition | Claude |
-| `.claude/agents/markdown-writer/SKILL.md` | Markdown Writer agent definition | Claude |
+| `.claude/agents/creator/SKILL.md` | Creator agent definition | Claude |
+| `.claude/agents/analyst/SKILL.md` | Analyst agent definition | Claude |
 | `.claude/rules/agent-files.md` | Rules for agent file structure | Claude |
 | `.claude/rules/editorial-style.md` | Editorial/UX visual standards and Microsoft color palette | Claude |
 | `.claude/rules/framework-markdown.md` | Markdown formatting and frontmatter rules | Claude |
@@ -213,14 +209,12 @@ The table below lists all agents across both platforms. Each agent exists in bot
 
 | Agent Name | Platform | Model | Phase Coverage | Description |
 |------------|----------|-------|----------------|-------------|
-| **Orchestrator** | Claude | `opus` | All phases | Routes user requests to specialized agents based on intent analysis. Does not generate content. |
-| **Orchestrator** | Copilot | — | All phases | Routes user requests to specialized agents based on intent analysis. Does not generate content. |
-| **Content Analyst** | Claude | `sonnet` | Phase 1, 3, 4 | Analyzes content, identifies gaps, performs competitive intelligence, and builds business cases. |
-| **Content Analyst** | Copilot | — | Phase 1, 3, 4 | Analyzes content, identifies gaps, performs competitive intelligence, and builds business cases. |
-| **Engagement Builder** | Claude | `sonnet` | Phase 2, 5 | Instantiates framework templates for specific client engagements, replacing placeholders with client values. |
-| **Engagement Builder** | Copilot | — | Phase 2, 5 | Instantiates framework templates for specific client engagements, replacing placeholders with client values. |
-| **Markdown Writer** | Claude | `sonnet` | Phase 3, 5 | Creates, updates, and formats framework and client documents following Markdown-first conventions. |
-| **Markdown Writer** | Copilot | — | Phase 3, 5 | Creates, updates, and formats framework and client documents following Markdown-first conventions. |
+| **Orchestrator** | Claude | `opus` | All phases | Routes user requests to the appropriate agent based on intent analysis. Does not generate content. |
+| **Orchestrator** | Copilot | — | All phases | Routes user requests to the appropriate agent based on intent analysis. Does not generate content. |
+| **Creator** | Claude | `sonnet` | All phases | Generalist content creation agent. Creates documents, decks, business cases, engagement profiles, and image mirrors. |
+| **Creator** | Copilot | — | All phases | Generalist content creation agent. Creates documents, decks, business cases, engagement profiles, and image mirrors. |
+| **Analyst** | Claude | `sonnet` | All phases | Generalist analysis agent. Performs research, gap analysis, competitive intelligence, document review, and market research. |
+| **Analyst** | Copilot | — | All phases | Generalist analysis agent. Performs research, gap analysis, competitive intelligence, document review, and market research. |
 
 > **Why dual-platform?** GitHub Copilot is used for IDE-integrated workflows (VS Code, GitHub.com). Claude Code is used for CLI-driven orchestration. Both share the same knowledge base, conventions, and rules.
 
@@ -302,14 +296,14 @@ Every README and key document in the workspace, organized by directory. Use thes
 ### Claude Code Primitives
 
 - `.claude/settings.json` -- Project-level Claude settings
-- `.claude/agents/` -- Agent definitions (orchestrator, content-analyst, engagement-builder, markdown-writer)
+- `.claude/agents/` -- Agent definitions (orchestrator, creator, analyst)
 - `.claude/skills/` -- 10 skill files across domain areas
 - `.claude/rules/` -- 4 rule files (agent-files, editorial-style, framework-markdown, mermaid-diagrams)
 
 ### GitHub Copilot Primitives
 
 - [.github/copilot-instructions.md](.github/copilot-instructions.md) -- Global Copilot instructions
-- `.github/agents/` -- 4 agent definitions (`.agent.md` format)
+- `.github/agents/` -- 3 agent definitions (`.agent.md` format)
 - `.github/skills/` -- 10 skill files (mirrored from Claude)
 - `.github/instructions/` -- 4 instruction files (`.instructions.md` format)
 - `.github/prompts/` -- 6 slash command prompts (`.prompt.md` format)

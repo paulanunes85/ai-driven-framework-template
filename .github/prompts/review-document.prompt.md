@@ -1,7 +1,7 @@
 ---
 name: "Review Document"
 description: "Reviews an existing Markdown document for quality, structure, completeness, and adherence to conventions."
-agent: "markdown-writer"
+agent: "analyst"
 mode: "review"
 ---
 

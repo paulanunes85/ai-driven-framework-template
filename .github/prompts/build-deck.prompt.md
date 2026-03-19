@@ -1,7 +1,7 @@
 ---
 name: "Build Deck"
 description: "Creates a structured Markdown presentation deck from provided content or topic."
-agent: "markdown-writer"
+agent: "creator"
 mode: "generate"
 ---
 

@@ -107,7 +107,7 @@ This is the **{{FRAMEWORK_NAME}}** workspace. All agents operating in this works
 
 | Primitive | Count | Location | Pattern |
 |-----------|-------|----------|---------|
-| Agents | 4 | `.github/agents/` | `{role-name}.agent.md` |
+| Agents | 3 | `.github/agents/` | `{role-name}.agent.md` |
 | Skills | 4 | `.github/skills/` | `{domain-name}/SKILL.md` |
 | Prompts | 6 | `.github/prompts/` | `{command-name}.prompt.md` |
 | Instructions | 3 | `.github/instructions/` | `{rule-name}.instructions.md` |
@@ -116,7 +116,7 @@ This is the **{{FRAMEWORK_NAME}}** workspace. All agents operating in this works
 
 | Primitive | Count | Location | Pattern |
 |-----------|-------|----------|---------|
-| Agents | 4 | `.claude/agents/` | `{role-name}.agent.md` |
+| Agents | 3 | `.claude/agents/` | `{role-name}.agent.md` |
 | Skills | 4 | `.claude/skills/` | `{domain-name}/SKILL.md` |
 | Prompts | 6 | `.claude/commands/` | `{command-name}.md` |
 | Rules | 3 | `.claude/rules/` | `{rule-name}.md` |

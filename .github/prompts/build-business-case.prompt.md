@@ -1,7 +1,7 @@
 ---
 name: "Build Business Case"
 description: "Produces a structured business case analysis with costs, benefits, risks, and ROI."
-agent: "content-analyst"
+agent: "creator"
 mode: "generate"
 ---
 

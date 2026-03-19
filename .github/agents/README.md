@@ -1,6 +1,6 @@
 ---
 title: "GitHub Copilot Agents"
-description: "Specialized agents that orchestrate framework workflows in GitHub Copilot."
+description: "Generalist agents that orchestrate framework workflows in GitHub Copilot."
 ---
 
 # GitHub Copilot Agents
@@ -11,18 +11,16 @@ This directory contains the agent definitions for GitHub Copilot. Agents are the
 
 | Agent | File | Description |
 |-------|------|-------------|
-| **Orchestrator** | `orchestrator.agent.md` | Routes user requests to the appropriate specialized agent based on intent analysis |
-| **Content Analyst** | `content-analyst.agent.md` | Analyzes content, identifies gaps, performs competitive intelligence, and builds business cases |
-| **Engagement Builder** | `engagement-builder.agent.md` | Instantiates framework templates for a specific client engagement, replacing placeholders with client-specific values |
-| **Markdown Writer** | `markdown-writer.agent.md` | Creates, updates, and formats framework and client documents following Markdown-first conventions |
+| **Orchestrator** | `orchestrator.agent.md` | Routes user requests to the appropriate agent based on intent analysis |
+| **Creator** | `creator.agent.md` | Generalist content creation agent. Creates documents, decks, business cases, engagement profiles, and image mirrors |
+| **Analyst** | `analyst.agent.md` | Generalist analysis agent. Performs research, gap analysis, competitive intelligence, document review, and market research |
 
 ## Agent Routing
 
-The Orchestrator agent acts as the entry point and delegates to specialized agents:
+The Orchestrator agent acts as the entry point and delegates to generalist agents:
 
-- **Content analysis requests** (gap analysis, business cases, market research) go to Content Analyst
-- **Client onboarding and template instantiation** go to Engagement Builder
-- **Document creation, formatting, and review** go to Markdown Writer
+- **Content creation requests** (documents, decks, business cases, client onboarding) go to Creator
+- **Analysis requests** (gap analysis, competitive intel, document review, market research) go to Analyst
 
 ## Navigation
 

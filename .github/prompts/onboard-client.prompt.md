@@ -1,7 +1,7 @@
 ---
 name: "Onboard Client"
 description: "Initiates a new client engagement by collecting information and instantiating framework templates."
-agent: "engagement-builder"
+agent: "creator"
 mode: "interactive"
 ---
 

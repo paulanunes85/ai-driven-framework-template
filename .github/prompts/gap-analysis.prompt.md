@@ -1,7 +1,7 @@
 ---
 name: "Gap Analysis"
 description: "Analyzes current state vs. desired state to identify gaps, risks, and recommendations."
-agent: "content-analyst"
+agent: "analyst"
 mode: "analyze"
 ---
 

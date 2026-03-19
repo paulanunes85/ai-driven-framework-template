@@ -170,7 +170,7 @@ This framework uses a dual-platform AI architecture: **GitHub Copilot** for IDE-
 
 | Primitive | Count | Location | Description |
 |-----------|-------|----------|-------------|
-| Agents | 4 | `.github/agents/` | Agent definitions (`.agent.md`) |
+| Agents | 3 | `.github/agents/` | Agent definitions (`.agent.md`) |
 | Skills | 4 | `.github/skills/` | Domain skill files (`SKILL.md`) |
 | Prompts | 6 | `.github/prompts/` | Slash command prompts (`.prompt.md`) |
 | Instructions | 3 | `.github/instructions/` | Behavioral rules (`.instructions.md`) |
@@ -179,7 +179,7 @@ This framework uses a dual-platform AI architecture: **GitHub Copilot** for IDE-
 
 | Primitive | Count | Location | Description |
 |-----------|-------|----------|-------------|
-| Agents | 4 | `.claude/agents/` | Agent definitions (`.agent.md`) |
+| Agents | 3 | `.claude/agents/` | Agent definitions (`.agent.md`) |
 | Skills | 4 | `.claude/skills/` | Domain skill files (`SKILL.md`) |
 | Prompts | 6 | `.claude/commands/` | Custom slash commands (`.md`) |
 | Rules | 3 | `.claude/rules/` | Behavioral rules (`.md`) |
@@ -190,10 +190,9 @@ This framework uses a dual-platform AI architecture: **GitHub Copilot** for IDE-
 
 | Agent | Role | Platform | Description |
 |-------|------|----------|-------------|
-| `orchestrator` | Coordinator | Both | Routes tasks to specialized agents, manages workflow execution, ensures deliverable quality |
-| `markdown-writer` | Content Creator | Both | Generates structured Markdown documents with proper frontmatter, versioning, and cross-references |
-| `engagement-builder` | Client Delivery | Both | Scaffolds client engagements, produces tailored proposals, business cases, and assessment reports |
-| `content-analyst` | Knowledge Analyst | Both | Analyzes source materials (decks, PDFs, docs), extracts key insights, and populates the knowledge base |
+| `orchestrator` | Coordinator | Both | Routes tasks to the appropriate agent, manages workflow execution, ensures deliverable quality |
+| `creator` | Content Creator | Both | Generalist content creation agent. Creates documents, decks, business cases, engagement profiles, and image mirrors |
+| `analyst` | Knowledge Analyst | Both | Generalist analysis agent. Performs research, gap analysis, competitive intelligence, document review, and market research |
 
 ---
 
@@ -201,12 +200,12 @@ This framework uses a dual-platform AI architecture: **GitHub Copilot** for IDE-
 
 | Command | Description | Agent |
 |---------|-------------|-------|
-| `/onboard-client` | Scaffold a new client engagement with discovery templates | `engagement-builder` |
-| `/markdown` | Generate a structured Markdown document from a brief | `markdown-writer` |
-| `/build-business-case` | Create a business case document with ROI analysis | `engagement-builder` |
-| `/analyze-source` | Extract and index content from a source document | `content-analyst` |
-| `/validate` | Run workspace validation and report issues | `orchestrator` |
-| `/review` | Review a document for quality, completeness, and compliance | `orchestrator` |
+| `/onboard-client` | Scaffold a new client engagement with discovery templates | `creator` |
+| `/markdown` | Generate a structured Markdown document from a brief | `creator` |
+| `/build-business-case` | Create a business case document with ROI analysis | `creator` |
+| `/build-deck` | Create a structured Markdown presentation deck | `creator` |
+| `/gap-analysis` | Analyze current vs. desired state to identify gaps | `analyst` |
+| `/review-document` | Review a document for quality, completeness, and compliance | `analyst` |
 
 ---
 

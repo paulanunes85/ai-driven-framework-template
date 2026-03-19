@@ -1,7 +1,7 @@
 ---
 name: "Markdown"
 description: "Creates or converts content into properly structured Markdown following framework conventions."
-agent: "markdown-writer"
+agent: "creator"
 mode: "generate"
 ---
 

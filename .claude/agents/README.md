@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Subagents"
-description: "Specialized subagents with model assignments that handle framework tasks in Claude Code."
+description: "Generalist subagents with model assignments that handle framework tasks in Claude Code."
 ---
 
 # Claude Code Subagents
@@ -11,23 +11,21 @@ This directory contains subagent definitions for Claude Code. Each subagent is d
 
 | Agent | Directory | Model | Description |
 |-------|-----------|-------|-------------|
-| **Orchestrator** | `orchestrator/` | Opus | Routes user requests to the appropriate specialized agent based on intent analysis |
-| **Content Analyst** | `content-analyst/` | Sonnet | Analyzes content, identifies gaps, performs competitive intelligence, and builds business cases |
-| **Engagement Builder** | `engagement-builder/` | Sonnet | Instantiates framework templates for a specific client engagement, replacing placeholders with client-specific values |
-| **Markdown Writer** | `markdown-writer/` | Sonnet | Creates, updates, and formats framework and client documents following Markdown-first conventions |
+| **Orchestrator** | `orchestrator/` | Opus | Routes user requests to the appropriate agent based on intent analysis |
+| **Creator** | `creator/` | Sonnet | Generalist content creation agent. Creates documents, decks, business cases, engagement profiles, and image mirrors |
+| **Analyst** | `analyst/` | Sonnet | Generalist analysis agent. Performs research, gap analysis, competitive intelligence, document review, and market research |
 
 ## Model Assignments
 
 - **Opus** is reserved for the Orchestrator, which requires advanced reasoning for intent analysis and routing decisions
-- **Sonnet** is used for all specialized agents, providing a balance of capability and efficiency for task execution
+- **Sonnet** is used for both generalist agents, providing a balance of capability and efficiency for task execution
 
 ## Agent Routing
 
-The Orchestrator delegates to specialized agents based on the user's intent:
+The Orchestrator delegates to generalist agents based on the user's intent:
 
-- **Content analysis** (gap analysis, business cases, market research) goes to Content Analyst
-- **Client onboarding and template instantiation** goes to Engagement Builder
-- **Document creation, formatting, and review** goes to Markdown Writer
+- **Content creation** (documents, decks, business cases, client onboarding) goes to Creator
+- **Analysis** (gap analysis, competitive intel, document review, market research) goes to Analyst
 
 ## Navigation
 
